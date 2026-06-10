@@ -1,9 +1,54 @@
 import { motion } from "framer-motion";
-import { Flame, Users, FolderGit2, CalendarDays } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Flame, Users, FolderGit2, CalendarDays, Lock } from "lucide-react";
 
 import Button from "../components/ui/Button";
 
 export default function CurrentChallenge() {
+
+    const targetDate = new Date("2026-06-15T12:00:00-03:00");
+
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        finished: false,
+    });
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                setTimeLeft((prev) => ({
+                    ...prev,
+                    finished: true,
+                }));
+
+                clearInterval(interval);
+                return;
+            }
+
+            setTimeLeft({
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor(
+                    (difference / (1000 * 60 * 60)) % 24
+                ),
+                minutes: Math.floor(
+                    (difference / (1000 * 60)) % 60
+                ),
+                seconds: Math.floor(
+                    (difference / 1000) % 60
+                ),
+                finished: false,
+            });
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section id="challenge" className="relative py-32">
             <div className="mx-auto max-w-7xl px-6">
@@ -60,6 +105,64 @@ export default function CurrentChallenge() {
                             animações, energia e uma estética capaz de representar a marca.
                         </p>
 
+                        <div className="mt-10">
+                            {!timeLeft.finished ? (
+                                <>
+                                    <p className="mb-6 text-sm uppercase tracking-[0.3em] text-cyan-400">
+                                        A Arena começa em
+                                    </p>
+
+                                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                                        <div className="rounded-2xl border border-cyan-500/20 bg-black/30 p-6 text-center">
+                                            <h4 className="text-4xl font-bold text-white">
+                                                {timeLeft.days}
+                                            </h4>
+
+                                            <p className="mt-2 text-gray-400">
+                                                Dias
+                                            </p>
+                                        </div>
+
+                                        <div className="rounded-2xl border border-cyan-500/20 bg-black/30 p-6 text-center">
+                                            <h4 className="text-4xl font-bold text-white">
+                                                {timeLeft.hours}
+                                            </h4>
+
+                                            <p className="mt-2 text-gray-400">
+                                                Horas
+                                            </p>
+                                        </div>
+
+                                        <div className="rounded-2xl border border-cyan-500/20 bg-black/30 p-6 text-center">
+                                            <h4 className="text-4xl font-bold text-white">
+                                                {timeLeft.minutes}
+                                            </h4>
+
+                                            <p className="mt-2 text-gray-400">
+                                                Minutos
+                                            </p>
+                                        </div>
+
+                                        <div className="rounded-2xl border border-cyan-500/20 bg-black/30 p-6 text-center">
+                                            <h4 className="text-4xl font-bold text-white">
+                                                {timeLeft.seconds}
+                                            </h4>
+
+                                            <p className="mt-2 text-gray-400">
+                                                Segundos
+                                            </p>
+                                        </div>
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="rounded-3xl border border-green-500/20 bg-green-500/10 p-8 text-center">
+                                    <h3 className="font-['Orbitron'] text-3xl font-bold text-green-400">
+                                        🔥 A Arena começou!
+                                    </h3>
+                                </div>
+                            )}
+                        </div>
+
                         {/* Tags */}
                         <div className="mt-8 flex flex-wrap gap-3 align-middle inline-flex items-center">
                             {[
@@ -102,54 +205,70 @@ export default function CurrentChallenge() {
                         </div>
 
                         {/* CTA */}
-                        <div className="mt-10 flex flex-col gap-10 sm:flex-row items-center justify-center"> 
-                            <Button>
-                                Participar da Arena
-                            </Button>
+                        {timeLeft.finished ? (
+                            <div className="mt-10 flex flex-col items-center justify-center gap-10 sm:flex-row">
+                                <Button>
+                                    Participar da Arena
+                                </Button>
 
-                            <Button variant="secondary">
-                                Ver Regras
-                            </Button>
-                        </div>
+                                <Button variant="secondary">
+                                    Ver Regras
+                                </Button>
+                            </div>
+                        ) : (
+                            <div className="mt-10 flex flex-col items-center justify-center gap-4">
+                                <div className="rounded-2xl border border-yellow-500/20 bg-yellow-500/10 px-6 py-4 text-center">
+                                    <p className="font-semibold text-yellow-300">
+                                        <Lock size={16} className="inline-block" /> A Arena ainda não foi liberada
+                                    </p>
+
+                                    <p className="mt-2 text-sm text-yellow-200/70">
+                                        Aguarde a contagem regressiva chegar ao fim.
+                                    </p>
+                                </div>
+                            </div>
+                        )}
 
                         {/* Stats */}
-                        <div className="mt-14 grid gap-6 md:grid-cols-3">
-                            <div className="rounded-2xl border border-white/10 bg-black/20 p-6">
-                                <Users className="mb-4 text-cyan-400" />
+                        {timeLeft.finished && (
+                            <div className="mt-14 grid gap-6 md:grid-cols-3">
+                                <div className="rounded-2xl border border-white/10 bg-black/20 p-6">
+                                    <Users className="mb-4 text-cyan-400" />
 
-                                <h4 className="text-3xl font-bold text-white">
-                                    08
-                                </h4>
+                                    <h4 className="text-3xl font-bold text-white">
+                                        08
+                                    </h4>
 
-                                <p className="text-gray-400">
-                                    Desafiantes
-                                </p>
+                                    <p className="text-gray-400">
+                                        Desafiantes
+                                    </p>
+                                </div>
+
+                                <div className="rounded-2xl border border-white/10 bg-black/20 p-6">
+                                    <FolderGit2 className="mb-4 text-cyan-400" />
+
+                                    <h4 className="text-3xl font-bold text-white">
+                                        00
+                                    </h4>
+
+                                    <p className="text-gray-400">
+                                        Submissões
+                                    </p>
+                                </div>
+
+                                <div className="rounded-2xl border border-white/10 bg-black/20 p-6">
+                                    <CalendarDays className="mb-4 text-cyan-400" />
+
+                                    <h4 className="text-3xl font-bold text-white">
+                                        30
+                                    </h4>
+
+                                    <p className="text-gray-400">
+                                        Dias Restantes
+                                    </p>
+                                </div>
                             </div>
-
-                            <div className="rounded-2xl border border-white/10 bg-black/20 p-6">
-                                <FolderGit2 className="mb-4 text-cyan-400" />
-
-                                <h4 className="text-3xl font-bold text-white">
-                                    00
-                                </h4>
-
-                                <p className="text-gray-400">
-                                    Submissões
-                                </p>
-                            </div>
-
-                            <div className="rounded-2xl border border-white/10 bg-black/20 p-6">
-                                <CalendarDays className="mb-4 text-cyan-400" />
-
-                                <h4 className="text-3xl font-bold text-white">
-                                    30
-                                </h4>
-
-                                <p className="text-gray-400">
-                                    Dias Restantes
-                                </p>
-                            </div>
-                        </div>
+                        )}
                     </div>
                 </motion.div>
             </div>

@@ -65,10 +65,7 @@ export default function Hero() {
                     <Button variant="secondary">
                         Participantes
                     </Button>
-
-                    <Button variant="ghost">
-                        Voltar
-                    </Button>
+                    
                 </motion.div>
 
                 {/* Estatísticas */}

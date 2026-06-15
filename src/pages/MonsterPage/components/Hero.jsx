@@ -43,7 +43,7 @@ export default function Hero() {
                             className="text-5xl font-black leading-none text-white md:text-7xl"
                         >
                             MONSTER
-                            <span className="block text-green-500">
+                            <span className="block text-green-500 animate-pulse">
                                 ENERGY
                             </span>
                             CHALLENGE

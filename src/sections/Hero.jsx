@@ -58,14 +58,17 @@ export default function Hero() {
                     className="mt-10 flex flex-col gap-4 sm:flex-row"
                 >
 
-                    <Button>
+                    <Button
+                        href="\monster"
+                    >
                         Arena Atual <ArrowRight size={18} />
+
                     </Button>
 
                     <Button variant="secondary">
                         Participantes
                     </Button>
-                    
+
                 </motion.div>
 
                 {/* Estatísticas */}

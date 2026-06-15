@@ -53,7 +53,7 @@ export default function Header() {
                         <li>
                             <Button
                                 variant="ghost"
-                                href="#challenge"
+                                href="\monster"
                                 className="text-gray-400 transition hover:text-white"
                             >
                                 Arena Atual

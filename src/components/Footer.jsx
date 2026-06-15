@@ -48,7 +48,7 @@ export default function Footer() {
 
                             <li>
                                 <a
-                                    href="#challenge"
+                                    href="\monster"
                                     className="text-gray-400 transition hover:text-cyan-400"
                                 >
                                     Arena Atual

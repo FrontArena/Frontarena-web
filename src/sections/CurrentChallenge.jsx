@@ -6,6 +6,7 @@ import Button from "../components/ui/Button";
 
 export default function CurrentChallenge() {
 
+    // Data e hora do início da arena (15 de junho de 2026, às 12:00 PM, horário de Brasília)
     const targetDate = new Date("2026-06-15T12:00:00-03:00");
 
     const [timeLeft, setTimeLeft] = useState({
@@ -15,6 +16,7 @@ export default function CurrentChallenge() {
         seconds: 0,
         finished: false,
     });
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -43,6 +45,50 @@ export default function CurrentChallenge() {
                     (difference / 1000) % 60
                 ),
                 finished: false,
+            });
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    // Data e hora do término da arena (30 de junho de 2026, às 12:00 PM, horário de Brasília)
+    const endDate = new Date("2026-06-30T12:00:00-03:00");
+
+    const [challengeTimeLeft, setChallengeTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const now = new Date();
+            const difference = endDate - now;
+
+            if (difference <= 0) {
+                setChallengeTimeLeft({
+                    days: 0,
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0,
+                });
+
+                clearInterval(interval);
+                return;
+            }
+
+            setChallengeTimeLeft({
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor(
+                    (difference / (1000 * 60 * 60)) % 24
+                ),
+                minutes: Math.floor(
+                    (difference / (1000 * 60)) % 60
+                ),
+                seconds: Math.floor(
+                    (difference / 1000) % 60
+                ),
             });
         }, 1000);
 
@@ -155,10 +201,16 @@ export default function CurrentChallenge() {
                                     </div>
                                 </>
                             ) : (
-                                <div className="rounded-3xl border border-green-500/20 bg-green-500/10 p-8 text-center">
-                                    <h3 className="font-['Orbitron'] text-3xl font-bold text-green-400">
-                                        🔥 A Arena começou!
+                                <div className="mt-10 rounded-3xl border border-green-500/20 bg-gradient-to-r from-green-500/10 via-green-400/5 to-green-500/10 p-8 text-center">
+
+                                    <h3 className="mt-5 font-['Orbitron'] text-4xl font-black text-white">
+                                        Arena Desbloqueada!
                                     </h3>
+
+                                    <p className="mx-auto mt-4 max-w-2xl text-gray-300 align-middle inline-flex items-center gap-2">
+                                        Os participantes já podem iniciar seus projetos e enviar suas
+                                        soluções para a primeira temporada da FrontArena.
+                                    </p>
                                 </div>
                             )}
                         </div>
@@ -208,11 +260,21 @@ export default function CurrentChallenge() {
                         {/* CTA */}
                         {timeLeft.finished ? (
                             <div className="mt-10 flex flex-col items-center justify-center gap-10 sm:flex-row">
-                                <Button>
+                                <Button
+                                    to={"/monster"}
+                                    variant="solid"
+                                    className="bg-green-500 px-6 py-4 font-semibold text-black transition hover:scale-105">
                                     Participar da Arena
                                 </Button>
 
-                                <Button variant="secondary">
+                                <Button
+                                    variant="secondary"
+                                    onClick={() =>
+                                        document
+                                            .getElementById("rules")
+                                            ?.scrollIntoView({ behavior: "smooth" })
+                                    }
+                                >
                                     Ver Regras
                                 </Button>
                             </div>
@@ -261,15 +323,62 @@ export default function CurrentChallenge() {
                                     <CalendarDays className="mb-4 text-cyan-400" />
 
                                     <h4 className="text-3xl font-bold text-white">
-                                        30
+                                        {challengeTimeLeft.days}d {challengeTimeLeft.hours}h
                                     </h4>
 
                                     <p className="text-gray-400">
-                                        Dias Restantes
+                                        Tempo Restante
                                     </p>
                                 </div>
                             </div>
                         )}
+                        <div className="mt-10">
+                            <p className="mb-5 text-sm uppercase tracking-[0.3em] text-red-400">
+                                Encerramento da Arena
+                            </p>
+
+                            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                                <div className="rounded-2xl border border-red-500/20 bg-black/30 p-6 text-center">
+                                    <h4 className="text-4xl font-bold text-white">
+                                        {challengeTimeLeft.days}
+                                    </h4>
+
+                                    <p className="mt-2 text-gray-400">
+                                        Dias
+                                    </p>
+                                </div>
+
+                                <div className="rounded-2xl border border-red-500/20 bg-black/30 p-6 text-center">
+                                    <h4 className="text-4xl font-bold text-white">
+                                        {challengeTimeLeft.hours}
+                                    </h4>
+
+                                    <p className="mt-2 text-gray-400">
+                                        Horas
+                                    </p>
+                                </div>
+
+                                <div className="rounded-2xl border border-red-500/20 bg-black/30 p-6 text-center">
+                                    <h4 className="text-4xl font-bold text-white">
+                                        {challengeTimeLeft.minutes}
+                                    </h4>
+
+                                    <p className="mt-2 text-gray-400">
+                                        Minutos
+                                    </p>
+                                </div>
+
+                                <div className="rounded-2xl border border-red-500/20 bg-black/30 p-6 text-center">
+                                    <h4 className="text-4xl font-bold text-white">
+                                        {challengeTimeLeft.seconds}
+                                    </h4>
+
+                                    <p className="mt-2 text-gray-400">
+                                        Segundos
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
             </div>

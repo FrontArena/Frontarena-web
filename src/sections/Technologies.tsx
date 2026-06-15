@@ -13,42 +13,56 @@ import {
 const techs = [
     {
         name: "React",
-        icon: <Atom size={28} />,
+        icon: <Atom size={36} />,
+        description: "Interfaces modernas e componentizadas.",
     },
     {
         name: "Vue",
-        icon: <Triangle size={28} />,
+        icon: <Triangle size={36} />,
+        description: "Leve, simples e extremamente produtivo.",
     },
     {
         name: "Angular",
-        icon: <Triangle size={28} />,
+        icon: <Triangle size={36} />,
+        description: "Estrutura completa para aplicações robustas.",
     },
     {
         name: "Tailwind",
-        icon: <Wind size={28} />,
+        icon: <Wind size={36} />,
+        description: "Estilização rápida com classes utilitárias.",
     },
     {
         name: "TypeScript",
-        icon: <FileCode2 size={28} />,
+        icon: <FileCode2 size={36} />,
+        description: "Mais segurança e produtividade no código.",
     },
     {
         name: "Next.js",
-        icon: <Rocket size={28} />,
+        icon: <Rocket size={36} />,
+        description: "Performance, SSR e escalabilidade.",
     },
     {
         name: "Sass",
-        icon: <Palette size={28} />,
+        icon: <Palette size={36} />,
+        description: "CSS mais organizado e poderoso.",
     },
     {
         name: "Vite",
-        icon: <Zap size={28} />,
+        icon: <Zap size={36} />,
+        description: "Builds extremamente rápidas.",
     },
 ];
 
 export default function Technologies() {
     return (
-        <section id="technologies" className="relative py-32">
-            <div className="mx-auto max-w-7xl px-6">
+        <section id="technologies" className="relative py-22 overflow-hidden">
+
+            {/* Glow */}
+            <div className="absolute left-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[180px]" />
+
+            <div className="absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-purple-600/10 blur-[180px]" />
+
+            <div className="relative mx-auto max-w-7xl px-6">
 
                 {/* Header */}
                 <motion.div
@@ -67,9 +81,9 @@ export default function Technologies() {
                     </h2>
 
                     <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400 align-middle inline-flex items-center gap-2">
-                        Na FrontArena não existe tecnologia obrigatória.
-                        Cada participante é livre para construir sua solução
-                        utilizando as ferramentas que mais domina.
+                        Não importa qual ferramenta você domina.
+                        Na FrontArena cada participante é livre para
+                        construir sua solução da forma que desejar.
                     </p>
                 </motion.div>
 
@@ -82,15 +96,30 @@ export default function Technologies() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
-                            className="group rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-xl transition hover:border-cyan-500/40 hover:bg-white/10"
+                            whileHover={{ y: -8 }}
+                            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition hover:border-cyan-500/40"
                         >
-                            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white">
-                                {tech.icon}
+
+                            {/* Glow */}
+                            <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+                                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-600/10" />
                             </div>
 
-                            <h3 className="text-xl font-semibold text-white">
-                                {tech.name}
-                            </h3>
+                            <div className="relative z-10">
+
+                                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-[0_0_30px_rgba(6,182,212,.25)]">
+                                    {tech.icon}
+                                </div>
+
+                                <h3 className="text-2xl font-bold text-white">
+                                    {tech.name}
+                                </h3>
+
+                                <p className="mt-4 text-sm leading-relaxed text-gray-400">
+                                    {tech.description}
+                                </p>
+
+                            </div>
                         </motion.div>
                     ))}
                 </div>
@@ -100,10 +129,10 @@ export default function Technologies() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="mt-12 text-center"
+                    className="mt-16 text-center"
                 >
                     <p className="text-gray-500">
-                        E qualquer outra tecnologia frontend que você desejar utilizar.
+                        HTML, CSS, JavaScript ou qualquer outra tecnologia frontend também são bem-vindas.
                     </p>
                 </motion.div>
 

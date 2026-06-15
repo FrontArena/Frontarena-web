@@ -1,43 +1,18 @@
 import { BsGithub } from "react-icons/bs";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUp, Swords } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="relative overflow-hidden border-t border-white/10 bg-black">
+        <footer className="relative overflow-hidden bg-black">
             {/* Glow */}
             <div className="absolute bottom-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-purple-600/10 blur-[180px]" />
 
-            <div className="relative mx-auto max-w-7xl px-6 py-20">
+            <div className="relative mx-auto max-w-7xl px-6 py-12">
 
                 <div className="grid gap-12 md:grid-cols-3">
 
-                    {/* Marca */}
+                    {/* Texto + Botão de volta para cima */}
                     <div>
-                        <a
-                            href="/"
-                            className="group flex items-center gap-1"
-                        >
-                            <ChevronLeft
-                                size={32}
-                                className="text-cyan-500 transition group-hover:-translate-x-1"
-                            />
-
-                            <h2 className="font-['Orbitron'] text-3xl font-bold">
-                                <span className="bg-gradient-to-r from-cyan-500 to-indigo-600 bg-clip-text text-transparent">
-                                    Front
-                                </span>
-
-                                <span className="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
-                                    Arena/
-                                </span>
-                            </h2>
-
-                            <ChevronRight
-                                size={32}
-                                className="text-purple-500 transition group-hover:translate-x-1"
-                            />
-                        </a>
-
                         <p className="mt-5 text-lg text-gray-300">
                             Um tema. Inúmeras soluções.
                         </p>
@@ -46,6 +21,13 @@ export default function Footer() {
                             Comunidade focada em desafios frontend,
                             criatividade e evolução através da prática.
                         </p>
+
+                        <a className="mt-6 inline-flex items-center gap-2 rounded-xl border border-purple-500/50 bg-purple-500/10 
+                                    px-4 py-2 text-sm text-purple-300 transition hover:border-purple-500/50 hover:bg-purple-500/20"
+                            href="#top">
+                            Voltar pra cima
+                            <ArrowUp size={14} />
+                        </a>
                     </div>
 
                     {/* Navegação */}
@@ -66,7 +48,7 @@ export default function Footer() {
 
                             <li>
                                 <a
-                                    href="#challenge"
+                                    href="\monster"
                                     className="text-gray-400 transition hover:text-cyan-400"
                                 >
                                     Arena Atual
@@ -100,20 +82,54 @@ export default function Footer() {
                         </h3>
 
                         <div className="space-y-4">
+                            <div className="flex flex-rows gap-3">
+                                <a
+                                    href="https://github.com/FrontArena"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="group flex items-center gap-3 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 px-5 py-3 text-cyan-300 transition-all hover:border-cyan-500/50 hover:bg-cyan-500/20"
+                                >
+                                    <BsGithub
+                                        size={18}
+                                        className="transition-transform group-hover:scale-110"
+                                    />
 
-                            <a
-                                href="https://github.com/FrontArena"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex w-fit items-center gap-3 rounded-xl border border-purple-500/20 bg-purple-500/10 px-4 py-3 text-purple-300 transition hover:border-purple-500/50 hover:bg-purple-500/20"
-                            >
-                                <BsGithub size={18} />
-                                GitHub
-                            </a>
+                                    <div className="text-left">
+                                        <p className="text-sm font-semibold">
+                                            FrontArena
+                                        </p>
 
-                            <p className="text-gray-500">
-                                Acompanhe desafios, regras,
-                                participantes e futuras temporadas.
+                                        <p className="text-xs text-cyan-400/70">
+                                            Repositório oficial
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="https://github.com/Chokiwars"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="group flex items-center gap-3 rounded-2xl border border-purple-500/20 bg-purple-500/10 px-5 py-3 text-purple-300 transition-all hover:border-purple-500/50 hover:bg-purple-500/20"
+                                >
+                                    <BsGithub
+                                        size={18}
+                                        className="transition-transform group-hover:scale-110"
+                                    />
+
+                                    <div className="text-left">
+                                        <p className="text-sm font-semibold">
+                                            Chokiwars
+                                        </p>
+
+                                        <p className="text-xs text-purple-400/70">
+                                            Criadora do projeto
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <p className="max-w-md text-sm leading-relaxed text-gray-500">
+                                Acompanhe desafios, regras, participantes e futuras temporadas.
                             </p>
                         </div>
                     </div>
@@ -123,16 +139,12 @@ export default function Footer() {
                 <div className="my-10 border-t border-white/10" />
 
                 {/* Bottom */}
-                <div className="flex flex-col gap-3 text-center text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
+                <div className="text-center text-sm text-gray-500">
                     <p>
                         © {new Date().getFullYear()} FrontArena. Todos os direitos reservados.
-                    </p>
-
-                    <p>
-                        Construído pela comunidade FrontArena ⚔️
-                    </p>
-
-                    <p>
+                        <span className="mx-3 text-cyan-600">•</span>
+                        Construído pela comunidade FrontArena <Swords size={18} className="inline-block" />
+                        <span className="mx-3 text-purple-600">•</span>
                         Versão 1.0.0
                     </p>
                 </div>

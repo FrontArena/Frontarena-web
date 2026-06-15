@@ -33,7 +33,7 @@ export default function Header() {
 
                     <ChevronRight
                         size={60}
-                        className="text-purple-500 transition duration-300 group-hover:translate-x-1 mt-3"
+                        className="text-purple-600 transition duration-300 group-hover:translate-x-1 mt-3"
                     />
                 </a>
 
@@ -53,7 +53,7 @@ export default function Header() {
                         <li>
                             <Button
                                 variant="ghost"
-                                href="#challenge"
+                                href="\monster"
                                 className="text-gray-400 transition hover:text-white"
                             >
                                 Arena Atual

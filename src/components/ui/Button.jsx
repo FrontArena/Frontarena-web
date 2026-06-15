@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function Button({
     children,
     variant = "primary",
     className = "",
+    to,
     ...props
 }) {
+
     const variants = {
         primary: `
             bg-gradient-to-r
@@ -27,20 +31,30 @@ export default function Button({
         `,
     };
 
+    if (to) {
+        return (
+            <Link
+                to={to}
+                className={`
+                    inline-flex items-center justify-center gap-2
+                    rounded-xl px-6 py-3 font-medium
+                    transition-all duration-300 cursor-pointer
+                    ${variants[variant]}
+                    ${className}
+                `}
+                {...props}
+            >
+                {children}
+            </Link>
+        );
+    }
+
     return (
         <button
             className={`
-                inline-flex
-                items-center
-                justify-center
-                gap-2
-                rounded-xl
-                px-6
-                py-3
-                font-medium
-                transition-all
-                duration-300
-                cursor-pointer
+                inline-flex items-center justify-center gap-2
+                rounded-xl px-6 py-3 font-medium
+                transition-all duration-300 cursor-pointer
                 ${variants[variant]}
                 ${className}
             `}

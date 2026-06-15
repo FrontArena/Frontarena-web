@@ -74,7 +74,8 @@ export default function Hero() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
                     className="
-                        mt-20
+                        mt-10
+                        mb-20
                         grid
                         gap-6
                         md:grid-cols-3

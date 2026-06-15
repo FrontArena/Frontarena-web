@@ -4,21 +4,21 @@ import { Flag, Code2, Trophy, Landmark } from "lucide-react";
 const cards = [
     {
         icon: <Flag size={28} />,
-        title: "Receive a Challenge",
+        title: "Receba o Tema",
         description:
-            "Every participant receives the same frontend challenge to solve.",
+            "Todos os combatentes recebem o mesmo desafio para mostrar suas habilidades.",
     },
     {
         icon: <Code2 size={28} />,
-        title: "Build Your Way",
+        title: "Construa sua Estratégia",
         description:
-            "Use React, Vue, Angular, Tailwind, HTML, CSS or any technology you prefer.",
+            "Escolha as tecnologias que preferir e desenvolva uma solução única.",
     },
     {
         icon: <Trophy size={28} />,
-        title: "Show Your Solution",
+        title: "Entre na Arena",
         description:
-            "Publish your project and compare ideas, creativity and execution.",
+            "Publique seu projeto e descubra como cada participante interpretou o mesmo desafio.",
     },
 ];
 
@@ -26,7 +26,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="relative py-32"
+            className="relative py-12"
         >
             <div className="mx-auto max-w-7xl px-6">
                 {/* Header */}
@@ -58,9 +58,9 @@ export default function About() {
                     </h2>
 
                     <p className="mt-6 text-lg text-gray-400">
-                        FrontArena is a frontend challenge community where
-                        developers compete, learn and evolve by building
-                        completely different solutions for the same challenge.
+                        FrontArena é uma comunidade de desafios de front-end onde
+                        desenvolvedores competem, aprendem e evoluem criando
+                        soluções completamente diferentes para o mesmo desafio.
                     </p>
                 </motion.div>
 

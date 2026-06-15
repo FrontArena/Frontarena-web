@@ -25,7 +25,7 @@ export default function Rules() {
     return (
         <section 
         id="rules"
-        className="px-6 py-24">
+        className="px-6">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-16 text-center">
                     <span className="text-sm font-semibold uppercase tracking-[0.3em] text-green-500">

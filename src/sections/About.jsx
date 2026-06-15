@@ -26,7 +26,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="relative py-32"
+            className="relative py-12"
         >
             <div className="mx-auto max-w-7xl px-6">
                 {/* Header */}

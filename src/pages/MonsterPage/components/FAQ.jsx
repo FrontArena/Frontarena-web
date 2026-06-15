@@ -38,7 +38,7 @@ export default function FAQ() {
             <div className="mx-auto max-w-5xl">
                 {/* Header */}
                 <div className="mb-16 text-center">
-                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-500">
+                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-purple-500">
                         FAQ
                     </span>
 
@@ -64,7 +64,7 @@ export default function FAQ() {
                                     overflow-hidden rounded-3xl border transition-all duration-300
                                     ${
                                         isOpen
-                                            ? "border-cyan-500/30 bg-cyan-500/[0.03]"
+                                            ? "border-purple-500/30 bg-gradient-to-r from-cyan-500/[0.03] to-purple-500/[0.03]"
                                             : "border-white/10 bg-white/5"
                                     }
                                 `}
@@ -81,7 +81,7 @@ export default function FAQ() {
                                                 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border text-sm font-bold
                                                 ${
                                                     isOpen
-                                                        ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-500"
+                                                        ? "border-purple-500/30 bg-purple-500/10 text-purple-500"
                                                         : "border-white/10 bg-white/5 text-gray-400"
                                                 }
                                             `}
@@ -98,7 +98,7 @@ export default function FAQ() {
                                     </div>
 
                                     <ChevronDown
-                                        className={`shrink-0 text-cyan-500 transition-transform duration-300 ${
+                                        className={`shrink-0 text-purple-500 transition-transform duration-300 ${
                                             isOpen
                                                 ? "rotate-180"
                                                 : ""
@@ -137,7 +137,7 @@ export default function FAQ() {
                 </div>
 
                 {/* Footer */}
-                <div className="mt-12 rounded-3xl border border-cyan-500/20 bg-cyan-500/[0.03] p-6 text-center">
+                <div className="mt-12 rounded-3xl border border-purple-500/20 bg-gradient-to-r from-cyan-500/[0.03] to-purple-500/[0.03] p-6 text-center">
                     <p className="text-gray-300">
                         Ainda ficou com alguma dúvida?
                     </p>

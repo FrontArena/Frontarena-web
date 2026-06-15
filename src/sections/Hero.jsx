@@ -58,11 +58,11 @@ export default function Hero() {
                     className="mt-10 flex flex-col gap-4 sm:flex-row"
                 >
 
-                    <Button
-                        href="\monster"
-                    >
-                        Arena Atual <ArrowRight size={18} />
-
+                    <Button 
+                    variant="primary"
+                    to="/monster">
+                        Arena Atual
+                        <ArrowRight size={18} />
                     </Button>
 
                     <Button variant="secondary">

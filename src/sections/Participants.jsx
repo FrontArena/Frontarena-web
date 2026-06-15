@@ -29,6 +29,11 @@ export default function Participants() {
             image: "https://yt3.googleusercontent.com/ytc/AIdro_lEeZP6Urk3JhCp_BnVamf57KSdAv-ZJb2nJqHmW-8ZIuM=s900-c-k-c0x00ffffff-no-rj",
         },
         {
+            name: "IgorLDev",
+            github: "https://github.com/IgorLDev",
+            image: "https://wallpapers.com/images/hd/snivy-on-leafy-background-voo65p8ok3gqsday.jpg",
+        },
+        {
             name: "Guest #342",
             github: null,
             image: null,

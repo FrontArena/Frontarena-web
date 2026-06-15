@@ -1,5 +1,5 @@
 import { BsGithub } from "react-icons/bs";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUp } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -46,6 +46,13 @@ export default function Footer() {
                             Comunidade focada em desafios frontend,
                             criatividade e evolução através da prática.
                         </p>
+
+                        <a className="mt-6 inline-flex items-center gap-2 rounded-xl border border-purple-500/50 bg-purple-500/10 
+                                    px-4 py-2 text-sm text-purple-300 transition hover:border-purple-500/50 hover:bg-purple-500/20"
+                            href="#top">
+                            Voltar pra cima
+                            <ArrowUp size={14} />
+                        </a>
                     </div>
 
                     {/* Navegação */}
@@ -147,9 +154,7 @@ export default function Footer() {
                             </div>
 
                             <p className="max-w-md text-sm leading-relaxed text-gray-500">
-                                Acompanhe o desenvolvimento da plataforma, participe dos desafios,
-                                envie sua solução e descubra como outros desenvolvedores resolveram
-                                o mesmo problema de formas completamente diferentes.
+                                Acompanhe desafios, regras, participantes e futuras temporadas.
                             </p>
                         </div>
                     </div>
@@ -159,16 +164,12 @@ export default function Footer() {
                 <div className="my-10 border-t border-white/10" />
 
                 {/* Bottom */}
-                <div className="flex flex-col gap-3 text-center text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
+                <div className="text-center text-sm text-gray-500">
                     <p>
                         © {new Date().getFullYear()} FrontArena. Todos os direitos reservados.
-                    </p>
-
-                    <p>
+                        <span className="mx-3 text-purple-500">•</span>
                         Construído pela comunidade FrontArena ⚔️
-                    </p>
-
-                    <p>
+                        <span className="mx-3 text-cyan-500">•</span>
                         Versão 1.0.0
                     </p>
                 </div>

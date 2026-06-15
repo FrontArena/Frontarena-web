@@ -95,11 +95,89 @@ export default function HowItWorks() {
                         })}
                     </div>
 
-                    
+
                     <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400 align-middle inline-flex items-center gap-2">
                         Siga esses passos para participar do desafio e mostrar suas habilidades.
                     </p>
                 </div>
+
+                <div className="mt-20 space-y-6">
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+                        <span className="text-sm font-bold text-green-500">
+                            PASSO 01
+                        </span>
+
+                        <h3 className="mt-2 text-2xl font-bold text-white">
+                            Inscreva-se na Arena
+                        </h3>
+
+                        <p className="mt-4 text-gray-400">
+                            Inscreva-se agora dentro da FrontArena e receba seu
+                            Monster para começar sua jornada na arena.
+                        </p>
+                    </div>
+
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+                        <span className="text-sm font-bold text-green-500">
+                            PASSO 02
+                        </span>
+
+                        <h3 className="mt-2 text-2xl font-bold text-white">
+                            Receba seu tema Monster
+                        </h3>
+
+                        <p className="mt-4 text-gray-400">
+                            Uma versão do Monster Energy será sorteada para você,
+                            definindo o tema visual que servirá como inspiração
+                            para seu projeto.
+                        </p>
+                    </div>
+
+                    {/* restante dos passos */}
+
+
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+                        <span className="text-sm font-bold text-green-500">
+                            PASSO 03
+                        </span>
+                        <h3 className="mt-2 text-2xl font-bold text-white">
+                            Desenvolva seu Projeto
+                        </h3>
+
+                        <p className="mt-4 text-gray-400">
+                            Use sua criatividade para desenvolver uma landing page incrível, inspirada na identidade
+                            visual da sua versão do Monster.
+                        </p>
+                    </div>
+
+
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+                        <span className="text-sm font-bold text-green-500">
+                            PASSO 04
+                        </span>
+                        <h3 className="mt-2 text-2xl font-bold text-white">
+                            Envie seu Projeto
+                        </h3>
+
+                        <p className="mt-4 text-gray-400">
+                            Publique seu projeto dentro do repositório definido e compartilhe com a comunidade.
+                        </p>
+                    </div>
+
+
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+                        <span className="text-sm font-bold text-green-500">
+                            PASSO 05
+                        </span>
+                        <h3 className="mt-2 text-2xl font-bold text-white">
+                            Dispute o Topo
+                        </h3>
+                        <p className="mt-4 text-gray-400">
+                            Os projetos serão avaliados pela comunidade e pelos organizadores, com base em critérios como criatividade, design, código e responsividade.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
     );

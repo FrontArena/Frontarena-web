@@ -36,7 +36,7 @@ export default function Rules() {
                         O que Vale?
                     </h2>
 
-                    <p className="mx-auto mt-4 max-w-2xl text-gray-400">
+                    <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400 align-middle inline-flex items-center gap-2">
                         O objetivo é criar uma experiência única inspirada no
                         universo Monster Energy. Use sua criatividade.
                     </p>

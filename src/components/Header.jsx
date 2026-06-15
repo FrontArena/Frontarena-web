@@ -33,7 +33,7 @@ export default function Header() {
 
                     <ChevronRight
                         size={60}
-                        className="text-purple-500 transition duration-300 group-hover:translate-x-1 mt-3"
+                        className="text-purple-600 transition duration-300 group-hover:translate-x-1 mt-3"
                     />
                 </a>
 

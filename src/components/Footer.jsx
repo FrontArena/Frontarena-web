@@ -7,7 +7,7 @@ export default function Footer() {
             {/* Glow */}
             <div className="absolute bottom-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-purple-600/10 blur-[180px]" />
 
-            <div className="relative mx-auto max-w-7xl px-6 py-20">
+            <div className="relative mx-auto max-w-7xl px-6 py-12">
 
                 <div className="grid gap-12 md:grid-cols-3">
 
@@ -34,7 +34,7 @@ export default function Footer() {
 
                             <ChevronRight
                                 size={32}
-                                className="text-purple-500 transition group-hover:translate-x-1"
+                                className="text-purple-600 transition group-hover:translate-x-1"
                             />
                         </a>
 
@@ -100,20 +100,56 @@ export default function Footer() {
                         </h3>
 
                         <div className="space-y-4">
+                            <div className="flex flex-rows gap-3">
+                                <a
+                                    href="https://github.com/FrontArena"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="group flex items-center gap-3 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 px-5 py-3 text-cyan-300 transition-all hover:border-cyan-500/50 hover:bg-cyan-500/20"
+                                >
+                                    <BsGithub
+                                        size={18}
+                                        className="transition-transform group-hover:scale-110"
+                                    />
 
-                            <a
-                                href="https://github.com/FrontArena"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex w-fit items-center gap-3 rounded-xl border border-purple-500/20 bg-purple-500/10 px-4 py-3 text-purple-300 transition hover:border-purple-500/50 hover:bg-purple-500/20"
-                            >
-                                <BsGithub size={18} />
-                                GitHub
-                            </a>
+                                    <div className="text-left">
+                                        <p className="text-sm font-semibold">
+                                            FrontArena
+                                        </p>
 
-                            <p className="text-gray-500">
-                                Acompanhe desafios, regras,
-                                participantes e futuras temporadas.
+                                        <p className="text-xs text-cyan-400/70">
+                                            Repositório oficial
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="https://github.com/Chokiwars"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="group flex items-center gap-3 rounded-2xl border border-purple-500/20 bg-purple-500/10 px-5 py-3 text-purple-300 transition-all hover:border-purple-500/50 hover:bg-purple-500/20"
+                                >
+                                    <BsGithub
+                                        size={18}
+                                        className="transition-transform group-hover:scale-110"
+                                    />
+
+                                    <div className="text-left">
+                                        <p className="text-sm font-semibold">
+                                            Chokiwars
+                                        </p>
+
+                                        <p className="text-xs text-purple-400/70">
+                                            Criadora do projeto
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <p className="max-w-md text-sm leading-relaxed text-gray-500">
+                                Acompanhe o desenvolvimento da plataforma, participe dos desafios,
+                                envie sua solução e descubra como outros desenvolvedores resolveram
+                                o mesmo problema de formas completamente diferentes.
                             </p>
                         </div>
                     </div>

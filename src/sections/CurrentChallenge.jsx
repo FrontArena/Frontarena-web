@@ -164,14 +164,15 @@ export default function CurrentChallenge() {
                         </div>
 
                         {/* Tags */}
-                        <div className="mt-8 flex flex-wrap gap-3 align-middle inline-flex items-center">
+                        <div className="mt-8 inline-flex flex-wrap items-center gap-3">
                             {[
-                                "Energia",
+                                "Energia Extrema",
+                                "Adrenalina",
                                 "Gaming",
-                                "Performance",
-                                "Esportes Radicais",
-                                "Criatividade",
-                                "Animações",
+                                "Neon",
+                                "Visual Agressivo",
+                                "Animações Impactantes",
+                                "Alta Performance",
                             ].map((tag) => (
                                 <span
                                     key={tag}

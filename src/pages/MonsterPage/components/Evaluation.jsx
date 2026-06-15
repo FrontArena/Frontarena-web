@@ -3,28 +3,28 @@ import { Palette, Lightbulb, Smartphone, Code2 } from "lucide-react";
 const criteria = [
     {
         icon: Palette,
-        percentage: "40 pts",
+        points: 40,
         title: "Design",
         description:
             "Visual, identidade, impacto e qualidade estética do projeto.",
     },
     {
         icon: Lightbulb,
-        percentage: "25 pts",
+        points: 25,
         title: "Criatividade",
         description:
             "Originalidade das ideias e diferenciais apresentados.",
     },
     {
         icon: Code2,
-        percentage: "20 pts",
+        points: 20,
         title: "Código",
         description:
             "Organização, boas práticas e estrutura do projeto.",
     },
     {
         icon: Smartphone,
-        percentage: "15 pts",
+        points: 15,
         title: "Responsividade",
         description:
             "Experiência consistente em desktop, tablet e mobile.",
@@ -79,16 +79,16 @@ export default function Evaluation() {
                                         </div>
                                     </div>
 
-                                    <span className="text-2xl font-black text-purple-500">
-                                        {item.percentage}
+                                    <span className="text-2xl font-black text-cyan-500">
+                                        {item.points} pts
                                     </span>
                                 </div>
 
                                 <div className="h-3 overflow-hidden rounded-full bg-white/5">
                                     <div
-                                        className="h-full rounded-full bg-gradient-to-r from-cyan-500 via-indigo to-purple-500"
+                                        className="h-full rounded-full bg-cyan-500"
                                         style={{
-                                            width: item.percentage,
+                                            width: `${item.points}%`,
                                         }}
                                     />
                                 </div>

@@ -23,7 +23,7 @@ export default function Hero() {
                 }}
             />
 
-            <div className="container relative mx-auto px-6 py-12">
+            <div className="container relative mx-auto px-6">
                 <div className="grid items-center gap-16 lg:grid-cols-2">
                     {/* Conteúdo */}
                     <div>

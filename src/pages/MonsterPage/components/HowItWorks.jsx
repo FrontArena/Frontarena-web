@@ -52,7 +52,7 @@ export default function HowItWorks() {
                         Entre na Arena
                     </h2>
 
-                    <p className="mx-auto mt-4 max-w-2xl text-gray-400">
+                    <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400 align-middle inline-flex items-center gap-2">
                         O processo é simples. Receba seu Monster, crie algo
                         incrível e mostre suas habilidades para toda a
                         comunidade.

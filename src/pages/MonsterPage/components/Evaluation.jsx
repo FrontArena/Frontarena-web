@@ -3,28 +3,28 @@ import { Palette, Lightbulb, Smartphone, Code2 } from "lucide-react";
 const criteria = [
     {
         icon: Palette,
-        percentage: "40%",
+        percentage: "40 pts",
         title: "Design",
         description:
             "Visual, identidade, impacto e qualidade estética do projeto.",
     },
     {
         icon: Lightbulb,
-        percentage: "25%",
+        percentage: "25 pts",
         title: "Criatividade",
         description:
             "Originalidade das ideias e diferenciais apresentados.",
     },
     {
         icon: Code2,
-        percentage: "20%",
+        percentage: "20 pts",
         title: "Código",
         description:
             "Organização, boas práticas e estrutura do projeto.",
     },
     {
         icon: Smartphone,
-        percentage: "15%",
+        percentage: "15 pts",
         title: "Responsividade",
         description:
             "Experiência consistente em desktop, tablet e mobile.",
@@ -50,31 +50,48 @@ export default function Evaluation() {
                     </p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <div className="mx-auto mt-20 max-w-7xl space-y-8 grid md:space-y-0 md:grid-cols-2 gap-6">
                     {criteria.map((item) => {
                         const Icon = item.icon;
 
                         return (
                             <div
                                 key={item.title}
-                                className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:border-green-500/30"
+                                className="rounded-3xl border border-white/10 bg-white/5 p-6"
                             >
-                                <Icon
-                                    size={34}
-                                    className="mb-6 text-green-500"
-                                />
+                                <div className="mb-4 flex items-center justify-between">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10">
+                                            <Icon
+                                                size={24}
+                                                className="text-green-500"
+                                            />
+                                        </div>
 
-                                <span className="text-5xl font-black text-green-500">
-                                    {item.percentage}
-                                </span>
+                                        <div>
+                                            <h3 className="font-bold text-white">
+                                                {item.title}
+                                            </h3>
 
-                                <h3 className="mt-4 text-xl font-bold text-white">
-                                    {item.title}
-                                </h3>
+                                            <p className="text-sm text-gray-400">
+                                                {item.description}
+                                            </p>
+                                        </div>
+                                    </div>
 
-                                <p className="mt-3 text-gray-400">
-                                    {item.description}
-                                </p>
+                                    <span className="text-2xl font-black text-green-500">
+                                        {item.percentage}
+                                    </span>
+                                </div>
+
+                                <div className="h-3 overflow-hidden rounded-full bg-white/5">
+                                    <div
+                                        className="h-full rounded-full bg-green-500"
+                                        style={{
+                                            width: item.percentage,
+                                        }}
+                                    />
+                                </div>
                             </div>
                         );
                     })}

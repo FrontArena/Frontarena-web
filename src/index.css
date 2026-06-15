@@ -118,3 +118,13 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+::selection {
+    background: rgb(124, 58, 237, 0.35);
+    color: white;
+}
+
+::-moz-selection {
+    background: rgba(168, 85, 247, 0.35);
+    color: white;
+}

@@ -59,27 +59,31 @@ export default function HowItWorks() {
                     </p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-                    {steps.map((step, index) => {
-                        const Icon = step.icon;
+                <div className="relative mt-20">
+                    {/* Linha */}
+                    <div className="absolute left-0 top-8 hidden h-0.5 w-full bg-gradient-to-r from-green-900/20 via-green-700 to-green-900/20 lg:block" />
 
-                        return (
-                            <div
-                                key={step.title}
-                                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-green-500/40 hover:bg-white/[0.07]"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-b from-green-500/0 to-green-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
+                    <div className="grid gap-10 lg:grid-cols-5">
+                        {steps.map((step, index) => {
+                            const Icon = step.icon;
 
-                                <div className="relative z-10">
-                                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-green-500/10 text-green-500">
-                                        <Icon size={28} />
+                            return (
+                                <div
+                                    key={step.title}
+                                    className="relative text-center"
+                                >
+                                    {/* Número */}
+                                    <div className="absolute -top-3 left-1/2 z-20 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-green-500/30 bg-black text-xs font-bold text-green-500">
+                                        {index + 1}
                                     </div>
 
-                                    <span className="text-xs font-bold text-green-500">
-                                        PASSO {index + 1}
-                                    </span>
+                                    {/* Ícone */}
+                                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-green-500/20 bg-green-500/10 text-green-500 shadow-[0_0_30px_rgba(34,197,94,0.15)]">
+                                        <Icon size={30} />
+                                    </div>
 
-                                    <h3 className="mt-2 text-xl font-bold text-white">
+                                    {/* Conteúdo */}
+                                    <h3 className="mt-6 text-lg font-bold text-white">
                                         {step.title}
                                     </h3>
 
@@ -87,9 +91,14 @@ export default function HowItWorks() {
                                         {step.description}
                                     </p>
                                 </div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
+
+                    
+                    <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400 align-middle inline-flex items-center gap-2">
+                        Siga esses passos para participar do desafio e mostrar suas habilidades.
+                    </p>
                 </div>
             </div>
         </section>

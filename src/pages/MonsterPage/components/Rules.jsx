@@ -1,4 +1,4 @@
-import { CheckCircle2, XCircle } from "lucide-react";
+import { CheckCircle2, XCircle, TriangleAlert } from "lucide-react";
 
 const allowed = [
     "HTML",
@@ -106,9 +106,10 @@ export default function Rules() {
                             ))}
                         </div>
 
-                        <div className="mt-8 rounded-2xl border border-yellow-500/20 bg-yellow-500/5 p-5">
-                            <p className="text-sm text-yellow-300">
-                                ⚠️ O uso de IA para auxiliar no desenvolvimento
+                        <div className="mt-8 rounded-2xl border border-amber-500/20 bg-amber-500/5 text-amber-300 p-5 flex items-center gap-3">
+                                <TriangleAlert size={32}/> 
+                                <p className="text-sm">
+                                O uso de IA para auxiliar no desenvolvimento
                                 é permitido, mas o projeto deve refletir suas
                                 próprias decisões, criatividade e implementação.
                             </p>

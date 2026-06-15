@@ -3,28 +3,28 @@ import { Palette, Lightbulb, Smartphone, Code2 } from "lucide-react";
 const criteria = [
     {
         icon: Palette,
-        percentage: "40%",
+        percentage: "40 pts",
         title: "Design",
         description:
             "Visual, identidade, impacto e qualidade estética do projeto.",
     },
     {
         icon: Lightbulb,
-        percentage: "25%",
+        percentage: "25 pts",
         title: "Criatividade",
         description:
             "Originalidade das ideias e diferenciais apresentados.",
     },
     {
         icon: Code2,
-        percentage: "20%",
+        percentage: "20 pts",
         title: "Código",
         description:
             "Organização, boas práticas e estrutura do projeto.",
     },
     {
         icon: Smartphone,
-        percentage: "15%",
+        percentage: "15 pts",
         title: "Responsividade",
         description:
             "Experiência consistente em desktop, tablet e mobile.",
@@ -50,7 +50,7 @@ export default function Evaluation() {
                     </p>
                 </div>
 
-                <div className="mx-auto mt-20 max-w-6xl space-y-8 grid md:space-y-0 md:grid-cols-2 gap-6">
+                <div className="mx-auto mt-20 max-w-7xl space-y-8 grid md:space-y-0 md:grid-cols-2 gap-6">
                     {criteria.map((item) => {
                         const Icon = item.icon;
 

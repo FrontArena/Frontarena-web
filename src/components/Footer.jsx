@@ -1,5 +1,5 @@
 import { BsGithub } from "react-icons/bs";
-import { ChevronLeft, ChevronRight, ArrowUp } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUp, Swords } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -142,9 +142,9 @@ export default function Footer() {
                 <div className="text-center text-sm text-gray-500">
                     <p>
                         © {new Date().getFullYear()} FrontArena. Todos os direitos reservados.
-                        <span className="mx-3 text-purple-500">•</span>
-                        Construído pela comunidade FrontArena ⚔️
-                        <span className="mx-3 text-cyan-500">•</span>
+                        <span className="mx-3 text-cyan-600">•</span>
+                        Construído pela comunidade FrontArena <Swords size={18} className="inline-block" />
+                        <span className="mx-3 text-purple-600">•</span>
                         Versão 1.0.0
                     </p>
                 </div>

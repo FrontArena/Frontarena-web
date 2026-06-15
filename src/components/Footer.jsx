@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, ArrowUp } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="relative overflow-hidden border-t border-white/10 bg-black">
+        <footer className="relative overflow-hidden bg-black">
             {/* Glow */}
             <div className="absolute bottom-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-purple-600/10 blur-[180px]" />
 
@@ -11,33 +11,8 @@ export default function Footer() {
 
                 <div className="grid gap-12 md:grid-cols-3">
 
-                    {/* Marca */}
+                    {/* Texto + Botão de volta para cima */}
                     <div>
-                        <a
-                            href="/"
-                            className="group flex items-center gap-1"
-                        >
-                            <ChevronLeft
-                                size={32}
-                                className="text-cyan-500 transition group-hover:-translate-x-1"
-                            />
-
-                            <h2 className="font-['Orbitron'] text-3xl font-bold">
-                                <span className="bg-gradient-to-r from-cyan-500 to-indigo-600 bg-clip-text text-transparent">
-                                    Front
-                                </span>
-
-                                <span className="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
-                                    Arena/
-                                </span>
-                            </h2>
-
-                            <ChevronRight
-                                size={32}
-                                className="text-purple-600 transition group-hover:translate-x-1"
-                            />
-                        </a>
-
                         <p className="mt-5 text-lg text-gray-300">
                             Um tema. Inúmeras soluções.
                         </p>
